@@ -26,6 +26,7 @@ def drop_table():
     cur = get_hive_connection(host_name, port, user, password, database)
     cur.execute('drop table demo.customers')
 
+
 def join():
     cur = get_hive_connection(host_name, port, user, password, database)
     cur.execute('Select C.id,C.name,o.oid,o.order_date,o.amount from customers join orders o on c.id = o.customer_id')
@@ -33,3 +34,6 @@ def join():
     print(rs)
 
 
+filter()
+join()
+drop_table()
